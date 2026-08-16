@@ -1,2 +1,3 @@
 # ApiTest
-Testing Api
+Just testing various API's
+maybe will build smth soon
