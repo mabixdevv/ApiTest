@@ -1,18 +1,7 @@
-async function GetInfo(){
-  try{
-    const responce = await fetch('https://dummyjson.com/products')
-    if(!responce.ok){
-      throw new Error('Error:' + responce.status)
-    }
-
-    const data = await responce.json()
-
-    console.log(data)
-
-    for (let product of data.products){
+function GenerateProduct(product){
       let img = product.images[0]
       let name = product.title
-      let desc = product.description
+      let desc = product.description 
       let price = product.price
 
       console.log(product)
@@ -76,6 +65,54 @@ async function GetInfo(){
 
       const cards = document.querySelector('.cards')
       cards.appendChild(card)
+}
+
+function DeleteProducts(){
+  let cards = document.querySelector('.cards')
+  for (let card of Array.from(cards.children)){
+    card.remove()
+  }
+}
+
+async function GetInfo(){
+  try{
+    const responce = await fetch('https://dummyjson.com/products')
+    if(!responce.ok){
+      throw new Error('Error:' + responce.status)
+    }
+
+    const data = await responce.json()
+
+    console.log(data)
+
+    const searctBt = document.getElementById('searchBt')
+    const searchDOM = document.getElementById('inputDOM')
+    
+    searctBt.addEventListener('click', async () => {
+      const currentText = searchDOM.value
+
+      try{
+        const search = await fetch('https://dummyjson.com/products/search?q=' + currentText)
+
+        if(!search.ok){
+          throw new Error(search.status)
+        }
+
+        const searchData = await search.json()
+        DeleteProducts()
+        for (let product of searchData.products){
+          GenerateProduct(product)
+        }
+
+        console.log(searchData)
+      }catch(error){
+        console.log(error)
+      }
+      
+    })
+
+    for (let product of data.products){
+      GenerateProduct(product)
     }
   }
   catch(error){
