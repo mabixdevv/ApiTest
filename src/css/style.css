@@ -5,6 +5,8 @@
 
 body{
     height: 100vh;
+    background-color: #FAF4F1;
+    font-family: 'DM Sans', sans-serif;
     /* background: linear-gradient(90deg, #ff007f 0%, #7a10cc 50%, #00f0ff 100%); */
 }
 
@@ -20,13 +22,26 @@ main{
     max-width: 1200px;
 }
 
+.mainTitle{
+    margin-bottom: 20px;
+}
+
+.mainTitle h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 34px;
+}
+
+.mainTitle p{
+    color: #8C7A7E;
+    font-size: 14px;
+}
+
 .wrap{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-
-    background-color: rgba(156, 156, 156, 0.5);
 
     min-width: 300px;
 
@@ -37,7 +52,16 @@ main{
 nav{
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid #EADED9;
+    border-radius: 999px;
+
+    padding: 8px 8px 8px 20px;
+
+    box-shadow: 0 1px 2px rgba(78,30,42,0.04)
 }
 
 nav button{
@@ -48,13 +72,62 @@ nav button{
     border: none;
     border-radius: 10px;
 
-    padding: 5px 10px;
+    padding: 10px 16px;
+    font-family:'DM Sans';
+    font-weight: 700;
+    font-size: 13px;
+
+    border-radius: 999px;
 
     font-weight: 800;
+
+    cursor:pointer;
+
+    white-space: nowrap;
+}
+
+#inputDOM{
+    border:none;
+
+    outline:none;
+
+    font-size: 14px;
+
+    flex: 1;
+
+    background: transparent;
+
+    color: #2B2024;
+}
+
+#divider{
+    width: 1px;
+    height: 24px;
+
+    background-color: #EADED9;
+    flex-shrink: 0;
 }
 
 #searchBt{
     gap: 15px;
+
+    background: #6E2A3A;
+    color: #fff;
+
+    padding: 12px 22px;
+
+    transition: .15s ease;
+}
+
+#searchBt:hover{
+    background-color: #4E1E2A;
+}
+
+
+#filterBt {
+    background-color: #F7E9E5;
+
+    color: #4E1E2A;
 }
 
 #filterBt img{
@@ -72,23 +145,33 @@ nav button{
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
 
-    max-height: 300px;
+    max-height: 330px;
     overflow-y: auto;
 }
 
 .card{
-    background-color: rgb(255, 255, 255);
+    background-color: #FFFFFF;
 
-    border-radius: 10px;
+    border: 1px solid #EADED9;
+    border-radius: 20px;
+
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(78,30,42,0.10);
 }
 
 .card_body{
-    padding: 20px;
+    padding: 22px 22px 20px;
 }
 
 #title{
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Fraunces', serif;
+
     color: rgb(24, 19, 19);
     margin-bottom: 10px;
     line-height: 1.3;
@@ -102,12 +185,21 @@ nav button{
 }
 
 .wrap3{
-    border-radius: 10px;
-    background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+    background: #F7E9E5;
+    height: 220px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position: relative;
+}
+
+#displayImg{
+    max-height: 150px;
+    max-width: 70%;
+    
+    filter: drop-shadow(0 14px 16px rgba(78,30,42,0.18));
 }
 
 .card_footer{
@@ -120,7 +212,8 @@ nav button{
     width: 100%;
     box-sizing: border-box;
 
-    border-top: 1px rgb(124, 124, 124) solid
+    
+    border-top: 1px solid #EADED9
 }
 
 .card_price{
@@ -130,31 +223,47 @@ nav button{
 }
 
 #desc{
-    font-size: 13px;
-    color: rgb(125, 125, 125);
+    font-size: 13.5px;
+
+    color: #8C7A7E;
+
     line-height: 1.6;
+
     margin-bottom: 16px;
+
     max-height: 40px;
+
     overflow:hidden
 }
 
 #currency{
-    font-size: 14px;
-    font-weight: 600;
-    color: rgb(100, 100, 100);
+    font-family:'Fraunces', serif;
+    font-size: 22px;
+
+    color: #4E1E2A;
 }
 
 #AddBt{
+    background: #6E2A3A;
+
+    color:#fff;
+
+    border:none;
+    border-radius: 12px;
+
     padding: 10px 20px;
 
-    border-radius: 10px;
-    border: none;
+    font-family:'DM Sans';
+    font-weight: 700;
+    font-size: 13px;
 
-    color: rgb(255, 255, 255);
-    background-color: rgb(0,0,0);
+    cursor:pointer;
+
+    transition: .15s ease;
 }
 
 #AddBt:hover{
-    transform: scale(1.1);
+    background: #4E1E2A; 
 }
+
 

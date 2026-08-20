@@ -12,6 +12,7 @@ function GenerateProduct(product){
       let imgDOM = document.createElement('img')
       imgDOM.src = img
       imgDOM.style.width = 128 + 'px'
+      imgDOM.id = 'displayImg'
 
       let nameDOM = document.createElement('h2')
       nameDOM.innerText = name
