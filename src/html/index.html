@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/main.js"></script>
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="../img/logo.svg">
+    <title>VelÓur</title>
 </head>
 <body>
+    <header>
+        <a href="#"><img src="../img/logo.svg" alt="VelÓur"></a>
+    </header>
     <main>
        <div class="container">
         <div class="mainTitle">
@@ -23,6 +27,84 @@
                 <input type="text" placeholder="Name" id="inputDOM">
                 <button id="searchBt">Search... <img src="../img/searchImg.jpeg" alt="search"></button>
             </nav>
+
+            <div class="filterChar">
+                <div class="filterHead">
+                    <span>Filters</span>
+
+                    <button>X</button>
+                </div>
+
+                <div class="category">
+                    <span>Category</span>
+
+                    <button>Eyes</button>
+
+                    <button>Face</button>
+
+                    <button>Lips</button>
+
+                    <button>Cheeks</button>
+
+                    <button>Tools</button>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="price">
+                    <div class="subInfo">
+                        <span>Max Price</span>
+
+                        <span>value</span>
+                    </div>
+                   
+                    <label for="moneyRange"></label>
+                    <input type="range" id="moneyRange" min="5" max="30" value="5" step="1">
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="finish">
+                    <span>Finish</span>
+
+                    <button>Matte</button>
+
+                    <button>Satin</button>
+
+                    <button>Shimmer</button>
+
+                    <button>Glossy</button>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="shade">
+                    <span>Shade</span>
+
+                    <button></button>
+
+                    <button></button>
+
+                    <button></button>
+
+                    <button></button>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="stock">
+                    <span>In stock only</span>
+
+                    <label for="stockCheck"></label>
+                    <input type="checkbox" name="" id="stockCheck">
+                </div>
+
+                <div class="filterFoot">
+                    <span>Clear all</span>
+
+                    <button>Apple filters</button>
+                </div>
+            </div>
 
             <div class="cards">
                 <!-- <div class="card">

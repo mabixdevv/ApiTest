@@ -1,3 +1,2 @@
 # ApiTest
-Just testing various API's
-maybe will build smth soon
+-Trying to learn how API works, not really trying to do anything fancy, so just a normal online shop web site.
