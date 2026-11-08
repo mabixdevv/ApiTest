@@ -1,3 +1,5 @@
+let phase = false
+
 function GenerateProduct(product){
       let img = product.images[0]
       let name = product.title
@@ -75,6 +77,22 @@ function DeleteProducts(){
   }
 }
 
+function OnClickFilter(phase){
+  if (phase == false){
+    const filterChar = document.querySelector('.filterChar')
+    filterChar.style.display = 'block'
+
+    phase = true
+    return phase
+  }else if (phase == true){
+    const filterChar = document.querySelector('.filterChar')
+    filterChar.style.display = 'none'
+
+    phase = false
+    return phase
+  }
+}
+
 async function GetInfo(){
   try{
     const responce = await fetch('https://dummyjson.com/products')
@@ -88,7 +106,9 @@ async function GetInfo(){
 
     const searctBt = document.getElementById('searchBt')
     const searchDOM = document.getElementById('inputDOM')
-    
+    const filterBt = document.getElementById('filterBt')
+
+
     searctBt.addEventListener('click', async () => {
       const currentText = searchDOM.value
 
@@ -110,6 +130,10 @@ async function GetInfo(){
         console.log(error)
       }
       
+    })
+
+    filterBt.addEventListener('click', () => {
+      phase = OnClickFilter(phase)
     })
 
     for (let product of data.products){
